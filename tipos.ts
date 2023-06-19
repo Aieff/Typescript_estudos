@@ -44,3 +44,42 @@ const value1: any = metodoDeUmaBibliotecaSemTS()
 const setUserAge = (age: number): void => {
     // Definição da função
 }
+
+// Tipos customizados (Conjunto de tipos Básicos)
+enum Gender {
+    Male,
+    Female,
+}
+
+enum Roles {
+    Admin,
+    NormalUser,
+}
+
+type User = {
+    name: string;
+    age: number;
+    gender: Gender
+    roles: Array<Roles>
+}
+
+const getuserNameAndAge = (user: User): [string, number] => {
+    return [user.name, user.age]
+}
+
+getuserNameAndAge ({
+    name: "Clara",
+    age: 22,
+    gender: Gender.Female,
+    roles: [Roles.Admin]
+})
+
+// propriedades opcionais (Utilize (?))
+
+type User2 = {
+    name: string;
+    age: number;
+    gender: Gender
+    roles: Array<Roles>
+    hairColor?: string
+}
